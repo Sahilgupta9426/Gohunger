@@ -1,0 +1,38 @@
+{% extends 'htmls/base.html' %}
+
+{% block title%} Contact Us{% endblock %}
+{% block css %}
+<style>
+    .con{
+background-color: #333030;
+}
+</style>
+{% endblock %}
+{% load static %}
+{% block body %} 
+{% if messages %}
+<ul class="messages alert alert-warning">
+    {% for message in messages %}
+    <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }}  </li>
+    
+    {% endfor %}
+</ul>
+{% endif %}
+<div class="container  ">
+<div class=" con row mt-4 mb-6 ">
+    <div class="col-sm-12 alert alert-info">
+        <h4 class="text-center alert alert-secondary" >Contact Us</h4>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" class="btn btn-primary" value="Submit Query">
+
+</form>
+    </div>
+</div>
+</div>
+
+
+
+    {% endblock %}

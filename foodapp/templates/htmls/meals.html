@@ -1,0 +1,116 @@
+{% extends 'htmls/base.html' %}
+
+{% block title%} Contact Us{% endblock %}
+{% block css %}
+
+{% endblock %}
+{% load static %}
+{% block body %} 
+<div class="Hole ">
+<div class="Hbody">
+<div class="menu">
+        
+        <div class="heading">
+        
+            <h1>ROCCO'S BISTRO</h1>
+            <h3>&mdash; MENU &mdash; </h3>
+        </div>
+        {% for meals in meal %}
+        <div class="food-items  ">
+            <img src="/media/{{meals.image}}">
+            <div class="details">
+                <div class="details-sub">
+                    <h5>{{meals.food_name}}</h5>
+                    <h5 class="price">Rs {{ meals.price }} </h5>
+                </div>
+                <p>{{ meals.desc }}</p>
+                <button>Add To Cart</button>
+            </div>
+        </div>
+        {% endfor %}
+
+    
+        
+
+        <!-- <div class="food-items">
+            <img src="{% static './images/chicken.jpeg' %}">
+            <div class="details">
+                <div class="details-sub">
+                    <h5>Honey Garlic Chicken</h5>
+                    <h5 class="price"> $15 </h5>
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit dolor sit amet consectetur adipisicing elit.</p>
+                <button>Add To Cart</button>
+            </div>
+        </div>
+
+        <div class="food-items">
+            <img src="{% static './images/chicken.jpeg' %}">
+            <div class="details">
+                <div class="details-sub">
+                    <h5>Manchow Soup</h5>
+                    <h5 class="price"> $8 </h5>
+                </div>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus quibusdam facilis, magni consectetur necessitatibus.</p>
+                <button>Add To Cart</button>
+            </div>
+        </div>
+
+        <div class="food-items">
+            <img src="{% static './images/chicken.jpeg' %}">
+            <div class="details">
+                <div class="details-sub">
+                    <h5>Basil Pesto Spaghetti</h5>
+                    <h5 class="price"> $12 </h5>
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit lorem ipsum, dolor sit amet consectetur adipisicing elit</p>
+                <button>Add To Cart</button>
+            </div>
+        </div>
+
+        <div class="food-items">
+            <img src="{% static './images/chicken.jpeg' %}">
+            <div class="details">
+                <div class="details-sub">
+                    <h5>Roast Salmon</h5>
+                    <h5 class="price"> $15 </h5>
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit</p>
+                <button>Add To Cart</button>
+            </div>
+        </div>
+
+        <div class="food-items">
+            <img src="{% static './images/chicken.jpeg' %}">
+            <div class="details">
+                <div class="details-sub">
+                    <h5>BBQ Sandwich</h5>
+                    <h5 class="price"> $10 </h5>
+                </div>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus reiciendis nam non quia! Earum eveniet quia minus nemo.</p>
+                <button>Add To Cart</button>
+            </div>
+        </div> -->
+    </div> <!--Menu-->
+    
+</div> <!--Hbody-->
+
+</div>  <!--Hole-->
+<div class="con1" style="background-color:#ba8080;padding:20px">
+    <div class="row">
+    <div class="col-12 d-flex justify-content-center">
+          <span>
+        {% if meal.has_previous %}
+            <a class="btn btn-primary " href="?page={{meal.previous_page_number}}">Prev</a>
+        {% endif %}
+            <span class="btn btn-info ">{{ meal.number }}</span>
+        {% if meal.has_next %}
+            <a class="btn btn-primary  " href="?page={{meal.next_page_number}}">Next</a>
+        {% endif %}
+        </span> 
+    </div>
+    </div>
+</div>
+
+
+{% endblock %}

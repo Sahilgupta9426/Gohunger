@@ -1,0 +1,117 @@
+cont{
+    margin:0;
+    padding:0;
+    
+    font-family: sans-serif;
+}
+.team-containerC
+{
+    width:100%;
+    height: auto;
+ 
+}
+.text1
+{
+    color:white;
+    font-size: 25px;
+    margin-top: 0px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+ 
+}
+.rowC
+{
+    width: 60%;
+    padding-bottom: 59px;
+    margin:auto;
+    margin-bottom: 0px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: rowC;
+    flex-wrap: wrap;
+    justify-items: center;
+    justify-content: center;
+}
+@media(max-width: 768px)
+{
+    .rowC{
+        width: 100%;
+    }
+}
+.profile-cardC
+{
+    background-color: #d5e6ff;;
+    width: 270px;
+    height: 250px;
+    margin: 20px 10px 10px 10px;
+}
+@media(max-width: 468px)
+{
+    .profile-cardC
+    {
+        width: 290px;
+        height: 250px;
+    }
+}
+.profile-content
+{
+    padding:15px;
+}
+.profile-image img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+}
+.profile-image
+{
+    text-align: center;
+}
+.desc
+{
+    text-align: center;
+}
+.desc h2
+{
+    color: rgb(10 28 26);
+    font-size: 20px;
+}
+.desc p{
+    font-size: 13px;
+    line-height: 1.3em;
+    margin-top: -10px;
+    color: #000000;
+     
+}
+.btnC-div
+{
+    text-align: center;
+}
+.btnC
+{
+    text-decoration: none;
+    padding-left: 26px;
+    padding-right: 24px;
+    padding-top: 6px;
+    padding-bottom: 7px;
+
+    background-color: #162739;
+    color: #ffffff;
+    width: 150px;
+    cursor: pointer;
+    height: 38px;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 3px 3px 3px 3px #334e76;
+    border-radius: 3px;
+    outline:none;
+    border:none;
+    text-transform: uppercase;
+}
+
+.containerC{
+    background-color:#241f1f;
+    margin-top: 3px;
+}
+
+
