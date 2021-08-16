@@ -2,9 +2,19 @@ from django.shortcuts import render,HttpResponse
 from .forms import ContactReg 
 from .models import Contact,Menu
 from django.contrib import messages
-from django.core.paginator import Paginator
+# from django.core.paginator import Paginator
+from django.views import View
 # Create your views here.
 
+class ProductView(View):
+	def get(self, request):
+		totalitem = 0
+		veg = Menu.objects.filter(category='N')
+		nonveg = Menu.objects.filter(category='V')
+		sweet = Menu.objects.filter(category='SE')
+
+		
+		return render(request, 'htmls/meals.html', {'veg':veg,'nonveg':nonveg,'sweets':sweet})
 
 
 def index(request):
@@ -13,14 +23,14 @@ def index(request):
 def about(request):
     return render(request, 'htmls/about.html')
 
-def meals(request):
-    # meal_obj=Menu.objects.all()
-    all_post=Menu.objects.all().order_by('id')
-    # pagignator=Paginator(all_post,3,orphans=1)
-    pagignator=Paginator(all_post,6)
-    page_number=request.GET.get('page')
-    meal_obj=pagignator.get_page(page_number)    
-    return render(request, 'htmls/meals.html',{'meal':meal_obj} )
+# def meals(request):
+#     # meal_obj=Menu.objects.all()
+#     all_post=Menu.objects.all().order_by('id')
+#     # pagignator=Paginator(all_post,3,orphans=1)
+#     pagignator=Paginator(all_post,6)
+#     page_number=request.GET.get('page')
+#     meal_obj=pagignator.get_page(page_number)    
+#     return render(request, 'htmls/meals.html',{'meal':meal_obj} )
 
 def signup(request):
     pass

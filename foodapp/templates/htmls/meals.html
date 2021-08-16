@@ -1,6 +1,6 @@
 {% extends 'htmls/base.html' %}
 
-{% block title%} Contact Us{% endblock %}
+{% block title%} Meals{% endblock %}
 {% block css %}
 
 {% endblock %}
@@ -8,22 +8,22 @@
 {% block body %} 
 <div class="Hole ">
 <div class="Hbody">
-<div class="menu">
+<div class="menu" style="    padding-bottom: 15px;">
         
         <div class="heading">
         
             <h1>ROCCO'S BISTRO</h1>
             <h3>&mdash; MENU &mdash; </h3>
         </div>
-        {% for meals in meal %}
+        {% for vegs in veg %}
         <div class="food-items  ">
-            <img src="/media/{{meals.image}}">
+            <img src="/media/{{vegs.image}}">
             <div class="details">
                 <div class="details-sub">
-                    <h5>{{meals.food_name}}</h5>
-                    <h5 class="price">Rs {{ meals.price }} </h5>
+                    <h5>{{vegs.food_name}}</h5>
+                    <h5 class="price">Rs {{ vegs.price }} </h5>
                 </div>
-                <p>{{ meals.desc }}</p>
+                <p>{{ vegs.desc }}</p>
                 <button>Add To Cart</button>
             </div>
         </div>
@@ -92,11 +92,59 @@
             </div>
         </div> -->
     </div> <!--Menu-->
-    
+    <div class="menu" style="   ">
+        
+        <div class="heading">
+        
+            <h1>ROCCO'S BISTRO</h1>
+            <h3>&mdash; MENU &mdash; </h3>
+        </div>
+        {% for non in nonveg %}
+        <div class="food-items  " >
+            <img src="/media/{{non.image}}">
+            <div class="details">
+                <div class="details-sub">
+                    <h5>{{non.food_name}}</h5>
+                    <h5 class="price">Rs {{ non.price }} </h5>
+                </div>
+                <p>{{ non.desc }}</p>
+                <button>Add To Cart</button>
+            </div>
+        </div>
+   
+        {% endfor %}
+    </div>
+
+
+    <div class="menu" style="    padding-bottom: 15px;">
+        
+        <div class="heading">
+        
+            <h1>ROCCO'S BISTRO</h1>
+            <h3>&mdash; MENU &mdash; </h3>
+        </div>
+        {% for sweet in sweets %}
+        <div class="food-items  ">
+            <img src="/media/{{sweet.image}}">
+            <div class="details">
+                <div class="details-sub">
+                    <h5>{{sweet.food_name}}</h5>
+                    <h5 class="price">Rs {{ sweet.price }} </h5>
+                </div>
+                <p>{{ sweet.desc }}</p>
+                <button>Add To Cart</button>
+            </div>
+        </div>
+   
+        {% endfor %}
+    </div>
+
 </div> <!--Hbody-->
 
 </div>  <!--Hole-->
-<div class="con1" style="background-color:#ba8080;padding:20px">
+
+{% comment %} Pagignator {% endcomment %}
+{% comment %} <div class="con1" style="background-color:#ba8080;padding:20px">
     <div class="row">
     <div class="col-12 d-flex justify-content-center">
           <span>
@@ -110,7 +158,7 @@
         </span> 
     </div>
     </div>
-</div>
+</div> {% endcomment %}
 
 
 {% endblock %}

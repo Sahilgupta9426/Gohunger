@@ -1,16 +1,16 @@
 from django.db import models
 
 
-# CATEGORY_CHOICES = (
-#  ('V', 'Veg'),
-#  ('N', 'Non Veg'),
-#  )
+CATEGORY_CHOICES = (
+ ('V', 'Veg'),
+ ('N', 'Non Veg'),
+ ('SE','Sweet') )
 # Create your models here.
 class Menu(models.Model):
     id=models.AutoField
     
     food_name = models.CharField(max_length=50)
-    category = models.CharField(max_length=50, default="")
+    category = models.CharField( choices=CATEGORY_CHOICES, max_length=2)
     price = models.IntegerField(default=0)
     desc = models.CharField(max_length=300)
     pub_date = models.DateField()
