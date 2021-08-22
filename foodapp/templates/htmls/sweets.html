@@ -8,36 +8,28 @@
 {% block body %} 
 <div class="Hole ">
 <div class="Hbody">
-<div class="menu" style="    padding-bottom: 15px;">
+       <div class="menu" style="    padding-bottom: 15px;">
         
         <div class="heading">
         
             <h1>ROCCO'S BISTRO</h1>
             <h3>&mdash; MENU &mdash; </h3>
         </div>
-        {% for vegs in veg %}
+        {% for sweet in sweets %}
         <div class="food-items  ">
-            <img src="/media/{{vegs.image}}">
+            <img src="/media/{{sweet.image}}">
             <div class="details">
                 <div class="details-sub">
-                    <h5>{{vegs.food_name}}</h5>
-                    <h5 class="price">Rs {{ vegs.price }} </h5>
+                    <h5>{{sweet.food_name}}</h5>
+                    <h5 class="price">Rs {{ sweet.price }} </h5>
                 </div>
-                <p>{{ vegs.desc }}</p>
+                <p>{{ sweet.desc }}</p>
                 <button>Add To Cart</button>
             </div>
         </div>
+   
         {% endfor %}
-
-    
-        
-
-      
-    </div> <!--Menu-->
-  
-
-
- 
+    </div>
 
 </div> <!--Hbody-->
 

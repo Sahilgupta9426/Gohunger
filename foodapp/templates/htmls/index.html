@@ -2,15 +2,22 @@
 {% load static %}
 {% block title%} Home{% endblock %}
 {% block css %}<style>
-    section {
+    section{
         
         background-image: url("{% static 'images/home2.jpg' %}");
+        content: "";
         height: 550px;
         width: 100%;
+       
         background-repeat:no-repeat;
         background-size: cover;
         background-position: center center;
+       
+       
+       
+        
         }
+
         
     
 </style> {% endblock %}
@@ -19,6 +26,7 @@
 
 
 <section>
+    <div class="nonblur">
     <h1 style="margin-left: 20px; padding-top:10px ;">GoHunger</h1>
    
         <div class="Heading">
@@ -28,6 +36,7 @@
             <button type="button" class="btn btn-dark m-2">SignIn</button>
             <button type="button" class="btn btn-dark m-2">SignUp</button>
         </div>
+    </div>
 </section>
 
 <div class="cont  ">

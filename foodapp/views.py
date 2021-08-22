@@ -1,14 +1,19 @@
 from django.shortcuts import render,HttpResponse
-from .forms import ContactReg 
-from .models import Contact,Menu
+from .forms import ContactReg ,CustomerProfileForm
+from .models import Contact,Menu,Cart,OrderPlaced,Customer
 from django.contrib import messages
 # from django.core.paginator import Paginator
 from django.views import View
+
+from django.http import JsonResponse
+from django.db.models import Q
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 # Create your views here.
 
 class ProductView(View):
 	def get(self, request):
-		totalitem = 0
+		
 		veg = Menu.objects.filter(category='N')
 		nonveg = Menu.objects.filter(category='V')
 		sweet = Menu.objects.filter(category='SE')
@@ -35,8 +40,8 @@ def about(request):
 def signup(request):
     pass
 
-def signIn(requset):
-    pass
+def login(requset):
+    return render(requset,'htmls/login.html')
 
 def ContactUS(request):
     if request.method=='POST':
@@ -58,3 +63,6 @@ def ContactUS(request):
 
     
     return render(request,'htmls/contact.html',{'form':fm,'conts':cont})
+
+
+
